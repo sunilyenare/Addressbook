@@ -1,5 +1,8 @@
 package com.addressbook.test;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Home implements Address{
     private String landmark;
     private String city;

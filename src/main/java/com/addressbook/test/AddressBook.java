@@ -2,12 +2,14 @@ package com.addressbook.test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.codehaus.jackson.map.ObjectMapper;
 
 public class AddressBook {
 
     private String bookName;
-    private final String filePath = "AllBook/" + bookName + ".json";
-
+    private List<Person> personCollection=new ArrayList<Person>();
     public AddressBook(String bookName) {
         this.bookName = bookName;
     }
@@ -15,7 +17,7 @@ public class AddressBook {
     public boolean create() throws IOException {
 
         if (!bookName.isEmpty()) {
-            new File(filePath).createNewFile();
+            new File("AllBook/" + bookName + ".json").createNewFile();
             return true;
         }
 
@@ -25,13 +27,20 @@ public class AddressBook {
     public boolean open() {
 
         if (!bookName.isEmpty()) {
-            new File(filePath).canRead();
+            new File("AllBook/" + bookName + ".json").canRead();
             return true;
         }
         return false;
     }
 
-    public boolean add() {
-        return true;
+    public boolean add(Person person) throws IOException {
+
+        if(new File("AllBook/" + bookName + ".json").canRead())
+        {
+            personCollection.add(person);
+            new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(new File("AllBook/" + bookName + ".json"),personCollection);
+            return true;
+        }
+        return false;
     }
 }

@@ -1,5 +1,8 @@
 package com.addressbook.test;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Person {
     private String firstName;
     private String lastName;
@@ -13,4 +16,9 @@ public class Person {
         this.address=address;
     }
 
+    @Override
+    public String toString() {
+        return "Person [firstName=" + firstName + ", lastName=" + lastName + ", mobileNumber=" + mobileNumber
+                + ", address=" + address + "]";
+    }
 }
