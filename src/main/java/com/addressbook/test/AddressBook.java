@@ -15,8 +15,11 @@ public class AddressBook {
     public boolean create() throws IOException {
 
         String filePath="AllBook/"+bookName+".json";
-        if (new File(filePath).createNewFile())
-             return true;
+        if (!bookName.isEmpty()){
+            new File(filePath).createNewFile();
+            return true;
+        }
+
         return false;
     }
 }
