@@ -30,4 +30,8 @@ public class AddressBook {
         }
         return false;
     }
+
+    public boolean add() {
+        return true;
+    }
 }
