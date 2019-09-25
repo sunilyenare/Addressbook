@@ -5,16 +5,15 @@ import java.io.IOException;
 
 public class AddressBook {
 
-    private String bookName;
+    private  String bookName;
+    private  final String filePath="AllBook/"+bookName+".json";
 
     public AddressBook(String bookName) {
         this.bookName=bookName;
     }
 
-
     public boolean create() throws IOException {
 
-        String filePath="AllBook/"+bookName+".json";
         if (!bookName.isEmpty()){
             new File(filePath).createNewFile();
             return true;
@@ -24,7 +23,7 @@ public class AddressBook {
     }
 
     public boolean open() {
-        String filePath="AllBook/"+bookName+".json";
+
         if(new File(filePath).canRead())
             return true;
         return false;
