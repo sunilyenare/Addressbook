@@ -22,4 +22,11 @@ public class AddressBook {
 
         return false;
     }
+
+    public boolean open() {
+        String filePath="AllBook/"+bookName+".json";
+        if(new File(filePath).canRead())
+            return true;
+        return false;
+    }
 }
