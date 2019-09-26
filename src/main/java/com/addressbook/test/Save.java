@@ -11,7 +11,7 @@ public class Save extends AddressBook {
 
     @Override
     public boolean execute() throws IOException {
-        new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(file, personCollection);
+        new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(file, people);
         return false;
     }
 }

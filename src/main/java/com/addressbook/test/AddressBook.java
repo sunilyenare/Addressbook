@@ -1,8 +1,6 @@
 package com.addressbook.test;
 
 import org.codehaus.jackson.annotate.JsonAutoDetect;
-import org.codehaus.jackson.map.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +17,6 @@ public abstract class AddressBook {
     public abstract boolean execute() throws IOException;
 
     protected File file = new File("AllBook/" + bookName + ".json");
-    protected List<Person> personCollection = new ArrayList<Person>();
+    protected List<Person> people = new ArrayList<Person>();
 
 }
