@@ -1,46 +1,24 @@
 package com.addressbook.test;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.map.ObjectMapper;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.codehaus.jackson.map.ObjectMapper;
 
-public class AddressBook {
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+public abstract class AddressBook {
+    protected String bookName;
 
-    private String bookName;
-    private List<Person> personCollection=new ArrayList<Person>();
     public AddressBook(String bookName) {
         this.bookName = bookName;
     }
 
-    public boolean create() throws IOException {
+    public abstract boolean execute() throws IOException;
 
-        if (!bookName.isEmpty()) {
-            new File("AllBook/" + bookName + ".json").createNewFile();
-            return true;
-        }
+    protected File file = new File("AllBook/" + bookName + ".json");
+    protected List<Person> personCollection = new ArrayList<Person>();
 
-        return false;
-    }
-
-    public boolean open() {
-
-        if (!bookName.isEmpty()) {
-            new File("AllBook/" + bookName + ".json").canRead();
-            return true;
-        }
-        return false;
-    }
-
-    public boolean add(Person person) throws IOException {
-
-        if(new File("AllBook/" + bookName + ".json").canRead())
-        {
-            personCollection.add(person);
-            new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(new File("AllBook/" + bookName + ".json"),personCollection);
-            return true;
-        }
-        return false;
-    }
 }
