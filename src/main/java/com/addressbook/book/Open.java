@@ -1,4 +1,4 @@
-package com.addressbook;
+package com.addressbook.book;
 
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 

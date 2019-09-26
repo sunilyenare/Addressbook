@@ -1,5 +1,8 @@
-package com.addressbook;
+package com.addressbook.book;
 
+import com.addressbook.Person;
+import com.addressbook.address.Address;
+import com.addressbook.address.Home;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 
 import java.io.IOException;

@@ -1,5 +1,6 @@
-package com.addressbook;
+package com.addressbook.book;
 
+import com.addressbook.Person;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 import org.codehaus.jackson.map.ObjectMapper;
 

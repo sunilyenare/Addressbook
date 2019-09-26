@@ -1,6 +1,8 @@
-package com.addressbook;
+package com.addressbook.book;
 
+import com.addressbook.Person;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

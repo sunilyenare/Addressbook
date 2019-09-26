@@ -1,4 +1,4 @@
-package com.addressbook;
+package com.addressbook.book;
 
 import java.io.File;
 import java.io.IOException;
