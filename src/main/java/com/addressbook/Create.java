@@ -1,4 +1,4 @@
-package com.addressbook.test;
+package com.addressbook;
 
 import java.io.File;
 import java.io.IOException;

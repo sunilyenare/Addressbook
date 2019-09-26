@@ -1,4 +1,4 @@
-package com.addressbook.test;
+package com.addressbook;
 
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 import org.codehaus.jackson.map.ObjectMapper;
